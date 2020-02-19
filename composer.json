@@ -1,0 +1,57 @@
+{
+    "name": "codingmatters/client-management-package",
+    "type": "laravel-package",
+    "description": "A custom package, used only under Coding Matters platform, to manage Clients as our Partners",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Gab Amba",
+            "email": "gab.amba@codingmatters.today",
+            "role": "Founder & Technologist"
+        }
+    ],
+    "support": {
+        "email": "support@codingmatters.today"
+    },
+    "require": {
+        "php": "^7.3",
+        "guzzlehttp/guzzle": "^6.5.2"
+    },
+    "require-dev": {
+        "laminas/laminas-coding-standard": "^1.0.0",
+        "malukenho/mcbumpface": "^1.1.1",
+        "orchestra/testbench": "^v4.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodingMatters\\ClientManagement\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodingMatters\\ClientManagementTests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodingMatters\\ClientManagement\\Providers\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --verbose --testdox --color=always"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
