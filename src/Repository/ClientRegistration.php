@@ -9,8 +9,11 @@ final class ClientRegistration
 {
     public static function save(string $uuid, string $username, string $firstName, string $lastName)
     {
-        $client = new Client(['base_uri' => config('codingmatters.crm.url')]);
-        $response = $client->post('/register', ['first_name' => $firstName, 'last_name' => $lastName, 'code' =>$uuid, 'username' => $username]);
-        dd('added');
+        try {
+            $client = new Client(['base_uri' => config('codingmatters.crm.url')]);
+            return $client->request("POST",'/register', ['json' => ['first_name' => $firstName, 'last_name' => $lastName, 'code' =>$uuid, 'username' => $username]]);
+        } catch (\Exception $exception) {
+            dd($exception->getMessage());
+        }
     }
 }

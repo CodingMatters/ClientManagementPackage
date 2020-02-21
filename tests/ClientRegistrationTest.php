@@ -18,7 +18,7 @@ final class ClientRegistrationTest extends CodingMattersTestCase
      */
     public function registrationWasSuccessful() : void
     {
-        ClientRegistration::save(Str::uuid()->toString(), $this->faker->userName, 'fab', 'ga');
-        $this->assertTrue(true);
+        $response = ClientRegistration::save(Str::uuid()->toString(), $this->faker->userName, $this->faker->firstName, $this->faker->lastName);
+        $this->assertEquals(201, $response->getStatusCode());
     }
 }
