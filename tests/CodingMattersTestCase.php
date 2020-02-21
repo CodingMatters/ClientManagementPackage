@@ -24,5 +24,4 @@ abstract class CodingMattersTestCase extends TestCase
 
         $this->artisan('migrate')->run();
     }
-
 }
