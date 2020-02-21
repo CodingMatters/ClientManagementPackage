@@ -27,6 +27,6 @@ abstract class CodingMattersTestCase extends TestCase
 
     protected function useCrmUrl($app)
     {
-        $app->config->set('codingmatters.crm.url', 'http://crm.local');
+        $app->config->set('codingmatters.crm.url', 'http://api.crm.local');
     }
 }
