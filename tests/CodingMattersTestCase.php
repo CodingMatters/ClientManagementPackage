@@ -24,4 +24,9 @@ abstract class CodingMattersTestCase extends TestCase
 
         $this->artisan('migrate')->run();
     }
+
+    protected function useCrmUrl($app)
+    {
+        $app->config->set('codingmatters.crm.url', 'http://crm.local');
+    }
 }
